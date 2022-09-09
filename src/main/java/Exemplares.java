@@ -1,12 +1,11 @@
-import java.util.List;
-import java.util.Random;
 
 public class Exemplares  {
     private int numUnico;
     private boolean disponivel;
     private Usuario usuarioEmprestado = null; // Se usuarioEmprestado for null,
-                                                // então o livro está em
-                                                // poder da biblioteca.
+                                            // então o livro está em
+                                            // poder da biblioteca.
+
 
     public Exemplares(int numUnico, boolean disponivel, Usuario usuarioEmprestado) {
 //        super();

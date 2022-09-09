@@ -31,11 +31,7 @@ public class Biblioteca {
 		return usuarios;
 	}
 
-	public void setUsuarios(ArrayList<Usuario> usuarios) {
-		this.usuarios = usuarios;
-	}
-
-	public int geraNumUnico() {
+	protected int geraNumUnico() {
 		int random = new Random().nextInt();
 		random = random > 1 ? random : random * -1;
 		if(this.numUnicoList.contains(random)){
@@ -95,7 +91,7 @@ public class Biblioteca {
 			for (Livro livro : catalogo) {
 				List<Exemplares> exem = livro.getExemplarList();
 				for (Exemplares exe: exem){
-					if(exe.isDisponivel()){
+					if(!exe.isDisponivel()){
 						livro.detalhesLivro(exe);
 						System.out.println();
 					}

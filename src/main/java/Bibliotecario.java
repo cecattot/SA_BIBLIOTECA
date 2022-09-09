@@ -18,10 +18,6 @@ public class Bibliotecario {
         this.nome = nome;
     }
 
-    public void setLivrosEmprestados(Livro livro, Exemplares exe, Usuario user) {
-        user.setExemplarEmprestados(livro, exe);
-    }
-
     public void emprestaLivro(Usuario usuario, Livro livro) {
         if (livro.haLivrosParaEmprestar()) {
             int controle = 0;
@@ -34,7 +30,7 @@ public class Bibliotecario {
                     usuario.setExemplarEmprestados(livro, exemplar);
                     break;
                 } else {
-                    if (exemplarList.size() - 1 == controle) {
+                    if (exemplarList.size() == controle) {
                         System.out.println("Livro \"" + livro.getTitulo() + "\", Número: "
                                 + exemplar.getNumUnico() + " não está disponível para empréstimo.");
                     }
@@ -68,10 +64,10 @@ public class Bibliotecario {
         );
     }
 
-    public void desanexaLivro(Livro livro, Exemplares exe, Usuario user) {
-        user.setExemplarEmprestados(livro, exe);
-    }
-
+//    public void desanexaLivro(Livro livro, Exemplares exe, Usuario user) {
+//        user.setExemplarEmprestados(livro, exe);
+//    }
+//
 //	public ArrayList<Livro> getLivrosEmprestados(){
 //		return this.livrosEmprestados;
 //	}

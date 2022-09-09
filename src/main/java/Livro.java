@@ -14,17 +14,15 @@ public class Livro {
         this.exemplarList = exemplarList;
     }
 
-    public Livro() {
-
-    }
-
     public List<Exemplares> getExemplarList() {
         return this.exemplarList;
     }
 
     public void organizaExemplares(){
-        for(int x = 0; x < this.exemplarList.size(); x++){
-            for (int y = 0; y < this.exemplarList.size() -1 - x; y++){
+//        this.exemplarList.get(0).setCongelado(true);
+        this.exemplarList.get(0).setDisponivel(false);
+        for(int x = 1; x < this.exemplarList.size(); x++){
+            for (int y = 1; y < this.exemplarList.size() -1 - x; y++){
                 if ((this.exemplarList.get(y).getNumUnico()) > (this.exemplarList.get(y+1).getNumUnico())){
                     int aux =  this.exemplarList.get(y).getNumUnico();
                     this.exemplarList.get(y).setNumUnico(this.exemplarList.get(y+1).getNumUnico());
@@ -73,7 +71,5 @@ public class Livro {
                 + ", Autor: " + this.autor
                 + ", Número Único: " + exemplar.getNumUnico());
     }
-
-
 
 }
